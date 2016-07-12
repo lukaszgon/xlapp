@@ -56,7 +56,8 @@ namespace WindowsFormsApplication1
         private void button2_Click(object sender, EventArgs e)
         {
             int checkIfInTheWorkBook = 0;
-
+            string findValue = textBox1.Text.ToString();
+            
             try
             {
                 // getting the workbook, that is already on the list and looking for typed value within it
@@ -80,7 +81,7 @@ namespace WindowsFormsApplication1
                             string cellVal1 = cell.Value.ToString();
                             string cellVal2 = cell.Value2.ToString();
                             //MessageBox.Show(textBox1.Text = cellVal1 + " " + cellVal2);
-                            if ((cellVal2 == textBox1.Text.ToString() || cellVal1 == textBox1.Text.ToString()) && textBox1.Text != "")
+                            if ((cellVal2 == findValue || cellVal1 == findValue) && textBox1.Text != "")
                             {
                                 cell.Interior.Color = System.Drawing.Color.Black;
                                 checkIfInTheWorkBook += 1;
