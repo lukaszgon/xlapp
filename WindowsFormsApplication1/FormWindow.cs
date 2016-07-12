@@ -79,10 +79,10 @@ namespace WindowsFormsApplication1
                         {
                             string cellVal1 = cell.Value.ToString();
                             string cellVal2 = cell.Value2.ToString();
+                            //MessageBox.Show(textBox1.Text = cellVal1 + " " + cellVal2);
                             if ((cellVal2 == textBox1.Text.ToString() || cellVal1 == textBox1.Text.ToString()) && textBox1.Text != "")
                             {
                                 cell.Interior.Color = System.Drawing.Color.Black;
-                                textBox1.Text = "Wpisz indeks";
                                 checkIfInTheWorkBook += 1;
                             }
                         }
@@ -91,7 +91,6 @@ namespace WindowsFormsApplication1
                 if (checkIfInTheWorkBook == 0)
                 {
                     MessageBox.Show("Indeks nie został znaleziony!");
-                    textBox1.Text = "Wpisz indeks";
                 }
                 else if(checkIfInTheWorkBook > 0)
                 {
@@ -101,6 +100,10 @@ namespace WindowsFormsApplication1
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                textBox1.Text = "Wpisz indeks";
             }
         }
     }
