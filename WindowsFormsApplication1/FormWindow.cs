@@ -81,7 +81,7 @@ namespace WindowsFormsApplication1
                             string cellVal1 = cell.Value.ToString();
                             string cellVal2 = cell.Value2.ToString();
                             //MessageBox.Show(textBox1.Text = cellVal1 + " " + cellVal2);
-                            if ((cellVal2 == findValue || cellVal1 == findValue) && textBox1.Text != "")
+                            if ((cellVal2 == findValue || cellVal1 == findValue) && findValue != "")
                             {
                                 cell.Interior.Color = System.Drawing.Color.Black;
                                 checkIfInTheWorkBook += 1;
